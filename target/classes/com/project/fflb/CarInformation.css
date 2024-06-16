@@ -1,0 +1,35 @@
+#ConfirmChangesButton {
+    -fx-background-color: limegreen;
+}
+#ConfirmChangesButton:hover {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+#ConfirmChangesButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#DeleteButton {
+    -fx-background-color: lightcoral;
+}
+#DeleteButton:hover {
+    -fx-background-color: pink;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+#DeleteButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#BackButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#BackButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

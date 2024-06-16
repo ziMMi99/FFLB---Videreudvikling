@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.fflb.controllers.salesman.SalesmanTableController">
+   <children>
+      <Button fx:id="BackButton" layoutX="1106.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="40.0" prefWidth="80.0" text="BACK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <HBox layoutY="200.0" prefHeight="600.0" prefWidth="1200.0">
+         <padding>
+            <Insets bottom="18.0" left="24.0" right="24.0" />
+         </padding>
+         <children>
+            <TableView fx:id="SalesmanTable" prefHeight="582.0" prefWidth="1317.0">
+              <columns>
+                <TableColumn fx:id="FirstNameColumn" prefWidth="314.0" text="First name" />
+                <TableColumn fx:id="LastNameColumn" prefWidth="236.0" text="Last name" />
+                  <TableColumn fx:id="EmailColumn" prefWidth="211.0" text="Email" />
+                  <TableColumn fx:id="PhoneColumn" prefWidth="243.0" text="Phone nr." />
+                  <TableColumn fx:id="LoanLimitColumn" prefWidth="147.0" text="Loan Limit" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox layoutY="130.0" prefHeight="70.0" prefWidth="1200.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="389.0">
+               <children>
+                  <TextField fx:id="SearchBar" onAction="#searchButtonAction" prefHeight="40.0" prefWidth="300.0" promptText="Search" />
+                  <Button fx:id="SearchButton" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="40.0" prefWidth="80.0" text="Search" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="763.0" spacing="12.0">
+               <children>
+                  <Button fx:id="CreateSalesmanButton" mnemonicParsing="false" onAction="#switchToCreationSalesman" prefHeight="40.0" prefWidth="200.0" text="Create Salesman" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="SelectSalesmanButton" mnemonicParsing="false" onAction="#switchToSelectSalesman" prefHeight="40.0" prefWidth="200.0" text="Edit Salesman" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </HBox>
+      <Label layoutY="19.0" prefHeight="70.0" prefWidth="976.0" text="Salesman Table">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <padding>
+            <Insets left="24.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="94.0" prefHeight="40.0" prefWidth="1200.0" spacing="10.0">
+         <children>
+            <Circle fill="LIMEGREEN" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label text="Active" />
+            <Circle fill="LIGHTCORAL" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Label text="Inactive" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

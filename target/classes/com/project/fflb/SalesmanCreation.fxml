@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.fflb.controllers.salesman.SalesmanCreationController">
+   <children>
+      <VBox alignment="CENTER" layoutY="109.0" prefHeight="600.0" prefWidth="1200.0" spacing="10.0">
+         <children>
+            <HBox prefHeight="0.0" prefWidth="395.0" spacing="24.0">
+               <children>
+                  <VBox prefHeight="71.0" prefWidth="565.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First name:" wrappingWidth="225.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="FirstNameTextField" promptText="e.g. Jens">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="71.0" prefWidth="564.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last name:" wrappingWidth="214.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="LastNameTextField" promptText="e.g. Jensen">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="50.0" prefWidth="395.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="104.208984375">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="EmailTextField" promptText="e.g. Jens@email.dk">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+            </VBox>
+            <HBox prefHeight="0.0" prefWidth="395.0" spacing="24.0">
+               <children>
+                  <VBox prefHeight="71.0" prefWidth="625.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone nr.:" wrappingWidth="139.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="PhoneNumberTextField" prefHeight="25.0" prefWidth="279.0" promptText="e.g. 88888888">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="71.0" prefWidth="503.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Loan limit (dkk):" wrappingWidth="170.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="LoanLimitTextField" prefHeight="39.0" prefWidth="216.0" promptText="e.g. 1000000">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="BackButton" layoutX="1106.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSalesmanTable" prefHeight="40.0" prefWidth="80.0" text="BACK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <HBox alignment="CENTER_RIGHT" layoutY="700.0" prefHeight="100.0" prefWidth="1200.0">
+         <children>
+            <Button fx:id="CreateSalesmanButton" mnemonicParsing="false" onAction="#createNewSalesman" prefHeight="60.0" prefWidth="200.0" text="Create Salesman">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </HBox>
+      <Label layoutY="19.0" prefHeight="70.0" prefWidth="976.0" text="Salesman Creation">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <padding>
+            <Insets left="24.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

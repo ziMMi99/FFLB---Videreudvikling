@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.fflb.controllers.car.CarCreationController">
+   <children>
+      <VBox alignment="CENTER" layoutY="120.0" prefHeight="600.0" prefWidth="1200.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="50.0" prefWidth="395.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" wrappingWidth="245.208984375">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="modelNameTextField" promptText="Model name">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="49.0" prefWidth="577.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price (dkk):" wrappingWidth="213.208984375">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="priceTextField" promptText="e.g. 250000">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="BackButton" layoutX="1106.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToCarTable" prefHeight="40.0" prefWidth="80.0" text="BACK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutY="19.0" prefHeight="70.0" prefWidth="976.0" text="Car Creation">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <padding>
+            <Insets left="24.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER_RIGHT" layoutY="700.0" prefHeight="100.0" prefWidth="1200.0">
+         <children>
+            <Button fx:id="CreateCarButton" mnemonicParsing="false" onAction="#createNewCar" prefHeight="60.0" prefWidth="200.0" text="Create Car">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets right="24.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

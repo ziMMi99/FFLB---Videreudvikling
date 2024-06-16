@@ -1,0 +1,52 @@
+#CreateSalesmanButton {
+    -fx-background-color: limegreen;
+}
+
+#SelectSalesmanButton {
+    -fx-background-color: yellow;
+}
+
+#CreateSalesmanButton:hover{
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#CreateSalesmanButton:pressed {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SelectSalesmanButton:hover{
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SelectSalesmanButton:pressed {
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SearchButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SearchButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#BackButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#BackButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.fflb.controllers.paymentplan.PaymentPlanCreationController">
+   <children>
+      <VBox alignment="CENTER_LEFT" layoutY="500.0" prefHeight="300.0" prefWidth="589.0" spacing="12.0">
+         <children>
+            <Label fx:id="RateLabel" prefHeight="35.0" prefWidth="314.0" text="Rent: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="MonthlyRentLabel" prefHeight="35.0" prefWidth="412.0" text="Monthly payment:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="87.0" prefWidth="1152.0">
+               <children>
+                  <Label fx:id="CalculateRentMessage" alignment="BOTTOM_LEFT" prefHeight="27.0" prefWidth="204.0" text="Calculating. Please wait" visible="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="CalculateRentButton" alignment="CENTER" mnemonicParsing="false" onAction="#calculateRent" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: limegreen;" text="Calculate ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" layoutY="100.0" prefHeight="582.0" prefWidth="1200.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="36.0">
+               <children>
+                  <VBox minHeight="-Infinity" prefHeight="100.0" prefWidth="493.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer:" wrappingWidth="135.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="CustomerComboBox" onAction="#customerChanged" prefHeight="39.0" prefWidth="402.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="423.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salesman:" wrappingWidth="120.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="SalesmanComboBox" prefHeight="39.0" prefWidth="336.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="472.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Car:" wrappingWidth="105.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="CarComboBox" onAction="#carChanged" prefHeight="39.0" prefWidth="379.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="79.0" prefWidth="600.0" spacing="24.0">
+               <children>
+                  <VBox prefHeight="79.0" prefWidth="340.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Plan Length (months):" wrappingWidth="293.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="PlanLengthTextField" onKeyPressed="#planLengthChanged" prefHeight="25.0" prefWidth="339.0" promptText="e.g. 48">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="89.0" prefWidth="291.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date:" wrappingWidth="121.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <DatePicker fx:id="StartDatePicker" prefHeight="39.0" prefWidth="290.0" promptText="e.g. dd.mm.yyyy" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="79.0" prefWidth="475.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Downpayment:" wrappingWidth="227.208984375">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="DownpaymentTextField" onKeyPressed="#downPaymentChanged" prefHeight="25.0" prefWidth="279.0" promptText="e.g. 250000">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="24.0" right="24.0" />
+         </padding>
+      </VBox>
+      <Label layoutY="19.0" prefHeight="70.0" prefWidth="976.0" text="Payment Plan Creation">
+         <font>
+            <Font size="48.0" />
+         </font>
+         <padding>
+            <Insets left="24.0" />
+         </padding>
+      </Label>
+      <Button fx:id="BackButton" layoutX="1106.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToPaymentPlanTable" prefHeight="40.0" prefWidth="80.0" text="BACK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="CreatePaymentPlanButton" layoutX="986.0" layoutY="726.0" mnemonicParsing="false" onAction="#createNewPaymentPlan" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: grey;" text="Create Payment Plan">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

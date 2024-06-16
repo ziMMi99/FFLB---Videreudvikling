@@ -1,0 +1,24 @@
+#HomePageCustomerButton,
+#HomePagePaymentPlanButton,
+#HomePageSalesmenButton,
+#HomePageCarsButton {
+    -fx-background-color: limegreen;
+}
+
+#HomePageCustomerButton:hover,
+#HomePagePaymentPlanButton:hover,
+#HomePageSalesmenButton:hover,
+#HomePageCarsButton:hover {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#HomePageCustomerButton:pressed,
+#HomePagePaymentPlanButton:pressed,
+#HomePageSalesmenButton:pressed,
+#HomePageCarsButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+

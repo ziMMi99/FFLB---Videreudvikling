@@ -1,0 +1,31 @@
+#CreditScoreButton:hover {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#CreditScoreButton {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#CreateCustomerButton:hover {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#CreateCustomerButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#BackButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#BackButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}

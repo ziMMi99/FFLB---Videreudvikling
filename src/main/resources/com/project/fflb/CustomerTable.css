@@ -1,0 +1,52 @@
+#CreateCustomerButton {
+    -fx-background-color: limegreen;
+}
+
+#SelectCustomerButton {
+    -fx-background-color: yellow;
+}
+
+#CreateCustomerButton:hover{
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#CreateCustomerButton:pressed {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SelectCustomerButton:hover{
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SelectCustomerButton:pressed {
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SearchButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SearchButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#BackButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#BackButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+

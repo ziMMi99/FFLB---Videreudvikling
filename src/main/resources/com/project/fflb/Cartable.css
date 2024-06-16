@@ -1,0 +1,52 @@
+#CreateCarButton {
+    -fx-background-color: limegreen;
+}
+
+#SelectCarButton {
+    -fx-background-color: yellow;
+}
+
+#CreateCarButton:hover{
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#CreateCarButton:pressed {
+    -fx-background-color: lightgreen;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SelectCarButton:hover{
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SelectCarButton:pressed {
+    -fx-background-color: lightyellow;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#SearchButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#SearchButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#BackButton:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+#BackButton:pressed {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
