@@ -3,23 +3,31 @@ package com.project.fflb.controllers.car;
 import com.project.fflb.controllers.SceneController;
 import com.project.fflb.data.dboData.CarData;
 import com.project.fflb.dbo.Car;
+import com.project.fflb.dbo.FerrariCarList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.SearchableComboBox;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Controller responsible for CarCreation.fxml
  *
  * @author Sebastian
  */
-public class CarCreationController extends SceneController {
+public class CarCreationController extends SceneController implements Initializable {
     // ========
     //   FXML
     // ========
 
     @FXML
-    TextField modelNameTextField, priceTextField;
+    SearchableComboBox<String> modelNameTextField;
+    @FXML
+    TextField priceTextField;
     @FXML
     Button CreateCarButton;
 
@@ -42,7 +50,7 @@ public class CarCreationController extends SceneController {
      */
     public void createNewCar(ActionEvent event){
         //Retrieves info from text boxes
-        String modelName = modelNameTextField.getText();
+        String modelName = modelNameTextField.getSelectionModel().getSelectedItem();
         if (modelName.isEmpty()) {
             createErrorPopup("System alert", "Model name is required.");
             return;
@@ -79,5 +87,12 @@ public class CarCreationController extends SceneController {
 
         //Switches back to the car table
         switchToScene(event, "CarTable");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        modelNameTextField.getItems().addAll(FerrariCarList.getCars());
     }
 }

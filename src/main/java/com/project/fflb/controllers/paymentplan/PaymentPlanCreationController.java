@@ -15,13 +15,19 @@ import com.project.fflb.enums.ThreadResult;
 import com.project.fflb.threading.api.APIData;
 import com.project.fflb.threading.api.APIHandler;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import org.controlsfx.control.SearchableComboBox;
 
 import java.net.URL;
+import java.sql.Array;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -35,11 +41,11 @@ public class PaymentPlanCreationController extends SceneController implements AP
     // ========
 
     @FXML
-    ComboBox<Customer> CustomerComboBox = new ComboBox<>();
+    SearchableComboBox<Customer> CustomerComboBox = new SearchableComboBox<>();
     @FXML
-    ComboBox<Salesman> SalesmanComboBox = new ComboBox<>();
+    SearchableComboBox<Salesman> SalesmanComboBox = new SearchableComboBox<>();
     @FXML
-    ComboBox<Car> CarComboBox = new ComboBox<>();
+    SearchableComboBox<Car> CarComboBox = new SearchableComboBox<>();
     @FXML
     TextField PlanLengthTextField, DownpaymentTextField;
     @FXML
@@ -61,6 +67,7 @@ public class PaymentPlanCreationController extends SceneController implements AP
      * Currently fetched interest rate from the bank.
      */
     private double interestRate;
+
 
     // ===========
     //   METHODS
@@ -287,6 +294,7 @@ public class PaymentPlanCreationController extends SceneController implements AP
      */
     private void updateCustomerDropDown() {
         //Get all customers from database
+
         ArrayList<Customer> list = CustomerData.getAll();
 
         if (list == null) { return; }
@@ -298,6 +306,7 @@ public class PaymentPlanCreationController extends SceneController implements AP
         list.removeIf(customer -> customer.getCreditScore() == Rating.D);
 
         CustomerComboBox.getItems().addAll(list);
+
     }
 
     /**
@@ -349,4 +358,6 @@ public class PaymentPlanCreationController extends SceneController implements AP
     public void carChanged(ActionEvent event) {
         resetButtons();
     }
+
+
 }

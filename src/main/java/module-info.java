@@ -4,6 +4,7 @@ module com.project.fflb {
     requires java.sql;
     requires junit;
     requires com.opencsv;
+    requires org.controlsfx.controls;
 
     opens com.project.fflb to javafx.fxml;
     exports com.project.fflb;

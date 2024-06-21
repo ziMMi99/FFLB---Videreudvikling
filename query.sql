@@ -39,8 +39,8 @@ has_payment_plan BIT NOT NULL
     PRIMARY KEY(car_id) --Define primary key
 )
 
-CREATE TABLE salesman(
-salesman_id INT IDENTITY NOT NULL,
+CREATE TABLE employee(
+employee_id INT IDENTITY NOT NULL,
 first_name NVARCHAR(50) NOT NULL,
 last_name NVARCHAR(50) NOT NULL,
 email NVARCHAR(50) NOT NULL,
@@ -48,7 +48,7 @@ phone_number INT NOT NULL,
 loan_limit float(53) NOT NULL,
 is_active BIT NOT NULL
 
-     PRIMARY KEY(salesman_id) --Define primary key
+     PRIMARY KEY(employee_id) --Define primary key
 )
 
 CREATE TABLE payment_plan(
@@ -59,8 +59,8 @@ customer_id INT NOT NULL
 car_id INT NOT NULL
     FOREIGN KEY REFERENCES car(car_id)
         ON DELETE CASCADE,
-salesman_id INT NOT NULL
-    FOREIGN KEY REFERENCES salesman(salesman_id)
+employee_id INT NOT NULL
+    FOREIGN KEY REFERENCES employee(employee_id)
         ON DELETE CASCADE,
 plan_length INT NOT NULL,
 down_payment FLOAT(53) NOT NULL,
@@ -93,7 +93,7 @@ INSERT INTO car (model_name, price, has_payment_plan) VALUES
 ('Nissan Altima', 23000, 0);
 
 -- Insert rows into salesman table
-INSERT INTO salesman (first_name, last_name, email, phone_number, loan_limit, is_active) VALUES
+INSERT INTO employee (first_name, last_name, email, phone_number, loan_limit, is_active) VALUES
 ('Mark', 'Davis', 'mark.davis@example.com', 51112222, 500000, 1),
 ('Nancy', 'Wilson', 'nancy.wilson@example.com', 53334444, 1000000, 1),
 ('Paul', 'Miller', 'paul.miller@example.com', 55556666, 1200000, 1),
@@ -276,7 +276,7 @@ CREATE PROCEDURE salesman_addToDB
     @is_active BIT
 AS
 INSERT INTO
-salesman(first_name,  last_name,  email,  phone_number,  loan_limit,  is_active)
+employee(first_name,  last_name,  email,  phone_number,  loan_limit,  is_active)
 VALUES  (@first_name, @last_name, @email, @phone_number, @loan_limit, @is_active)
 GO
 
@@ -288,7 +288,7 @@ GO
 CREATE PROCEDURE salesman_getFromDB_ByID
     @salesman_id int
 AS
-SELECT * FROM salesman WHERE salesman_id = @salesman_id
+SELECT * FROM employee WHERE employee_id = @salesman_id
 GO
 
 --Get All
@@ -298,7 +298,7 @@ GO
 
 CREATE PROCEDURE salesman_getAll
 AS
-SELECT * FROM salesman;
+SELECT * FROM employee;
 GO
 
 --Update
@@ -315,14 +315,14 @@ CREATE PROCEDURE salesman_updateSalesman_ByID
     @loan_limit FLOAT(53),
     @is_active BIT
 AS
-UPDATE salesman SET
+UPDATE employee SET
     first_name = @first_name,
     last_name = @last_name,
     email = @email,
     phone_number = @phone_number,
     loan_limit = @loan_limit,
     is_active = @is_active
-WHERE salesman_id = @salesman_id
+WHERE employee_id = @salesman_id
 GO
 
 --Delete
@@ -333,7 +333,7 @@ GO
 CREATE PROCEDURE salesman_deleteSalesman_ByID
     @salesman_id int
 AS
-DELETE FROM salesman WHERE salesman_id = @salesman_id
+DELETE FROM employee WHERE employee_id = @salesman_id
 GO
 
 ----------------
@@ -348,7 +348,7 @@ GO
 CREATE PROCEDURE paymentplan_addToDB
     @customer_id INT,
     @car_id INT,
-    @salesman_id INT,
+    @employee_id INT,
     @plan_length INT,
     @down_payment FLOAT(53),
     @monthly_rent FLOAT(53),
@@ -356,8 +356,8 @@ CREATE PROCEDURE paymentplan_addToDB
     @car_fixed_price FLOAT(53)
 AS
 INSERT INTO
-payment_plan(customer_id,  car_id,  salesman_id,  plan_length,  down_payment,  monthly_rent,  start_date, car_fixed_price)
-VALUES      (@customer_id, @car_id, @salesman_id, @plan_length, @down_payment, @monthly_rent, @start_date, @car_fixed_price)
+payment_plan(customer_id,  car_id,  employee_id,  plan_length,  down_payment,  monthly_rent,  start_date, car_fixed_price)
+VALUES      (@customer_id, @car_id, @employee_id, @plan_length, @down_payment, @monthly_rent, @start_date, @car_fixed_price)
 GO
 
 --Get
@@ -390,7 +390,7 @@ CREATE PROCEDURE paymentplan_updatePaymentPlan_ByID
     @paymentplan_id INT,
     @customer_id INT,
     @car_id INT,
-    @salesman_id INT,
+    @employee_id INT,
     @plan_length INT,
     @down_payment FLOAT(53),
     @monthly_rent FLOAT(53),
@@ -400,7 +400,7 @@ AS
 UPDATE payment_plan SET
     customer_id = @customer_id,
     car_id = @car_id,
-    salesman_id = @salesman_id,
+    employee_id = @employee_id,
     plan_length = @plan_length,
     down_payment = @down_payment,
     monthly_rent = @monthly_rent,
