@@ -98,10 +98,11 @@ INSERT INTO employee (first_name, last_name, email, phone_number, loan_limit, is
 ('Nancy', 'Wilson', 'nancy.wilson@example.com', 53334444, 1000000, 1),
 ('Paul', 'Miller', 'paul.miller@example.com', 55556666, 1200000, 1),
 ('Laura', 'Clark', 'laura.clark@example.com', 57778888, 1100000, 1),
-('Tom', 'Lewis', 'tom.lewis@example.com', 59990000, 900000, 0);
+('Tom', 'Lewis', 'tom.lewis@example.com', 59990000, 900000, 0),
+('admin', 'admin', 'admin@admin.com', 12345678, 1000000000000, 1)
 
 -- Insert rows into payment_plan table
-INSERT INTO payment_plan (customer_id, car_id, salesman_id, plan_length, down_payment, monthly_rent, start_date, car_fixed_price) VALUES
+INSERT INTO payment_plan (customer_id, car_id, employee_id, plan_length, down_payment, monthly_rent, start_date, car_fixed_price) VALUES
 (1, 1, 1, 36, 5000, 5, '2024-01-01', 24000),
 (2, 2, 2, 48, 7000, 6, '2024-02-01', 26000),
 (3, 3, 3, 24, 3000, 4, '2024-07-12', 35000);
@@ -289,6 +290,17 @@ CREATE PROCEDURE salesman_getFromDB_ByID
     @salesman_id int
 AS
 SELECT * FROM employee WHERE employee_id = @salesman_id
+GO
+
+--Get
+IF OBJECT_ID('salesman_getFromDB_ByName', 'P') IS NOT NULL
+    DROP PROCEDURE salesman_getFromDB_ByName;
+GO
+
+CREATE PROCEDURE salesman_getFromDB_ByName
+    @first_name NVARCHAR(100)
+AS
+SELECT * FROM employee WHERE first_name = @first_name
 GO
 
 --Get All

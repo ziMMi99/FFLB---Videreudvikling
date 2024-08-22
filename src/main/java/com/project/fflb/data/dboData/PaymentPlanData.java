@@ -158,7 +158,7 @@ public class PaymentPlanData extends DataHandler {
             int payment_plan_id = resultset.getInt("payment_plan_id");
             int customer_id = resultset.getInt("customer_id");
             int car_id = resultset.getInt("car_id");
-            int salesman_id = resultset.getInt("salesman_id");
+            int salesman_id = resultset.getInt("employee_id");
             int plan_length = resultset.getInt("plan_length");
             double down_payment = resultset.getDouble("down_payment");
             double monthly_rent = resultset.getDouble("monthly_rent");

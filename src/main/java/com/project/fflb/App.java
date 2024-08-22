@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //Load main page fxml
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("HomePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("LoginForm.fxml"));
         //Set the current scene to the loaded fxml file
         Scene scene = new Scene(fxmlLoader.load());
         System.out.println("Loaded Home page");

@@ -69,6 +69,36 @@ public class SalesmanData extends DataHandler {
     }
 
     /**
+     * Fetch a salesman object from the salesman table.
+     * @param username ID of the salesman to fetch
+     * @return {@link Salesman} object
+     */
+    public static Salesman getByName(String username) {
+        //Cannot proceed if connection isn't established
+        if (!hasConnection()) {
+            openConnection();
+        }
+
+        Salesman salesman = null;
+        //Make a call to the database using the super class method "makeCall" Which calls a stored procedure
+        try (CallableStatement cs = makeCall("{CALL salesman_getFromDB_ByName(?)}")) {
+            cs.setString(1, username);
+            ResultSet resultset = cs.executeQuery();
+
+            //Get first element from call result
+            try {
+                salesman = createFromResultSet(resultset).get(0);
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("No salesmen found!");
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println("Could not get salesman from database - " + e.getMessage());
+        }
+        return salesman;
+    }
+
+    /**
      * Fetch all salesmen from the salesman table.
      * @return ArrayList of {@link Salesman} objects
      */
@@ -150,7 +180,7 @@ public class SalesmanData extends DataHandler {
 
         //Loop through all results from the set and constructs DBO's from it
         while (resultset.next()) {
-            int salesman_id = resultset.getInt("salesman_id");
+            int salesman_id = resultset.getInt("employee_id");
             String firstName = resultset.getString("first_name");
             String lastName = resultset.getString("last_name");
             String email = resultset.getString("email");
